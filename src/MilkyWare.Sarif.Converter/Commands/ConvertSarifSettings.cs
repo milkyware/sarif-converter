@@ -1,4 +1,5 @@
-﻿using Spectre.Console.Cli;
+﻿using MilkyWare.Sarif.Converter.Enums;
+using Spectre.Console.Cli;
 
 namespace MilkyWare.Sarif.Converter.Commands
 {
@@ -6,5 +7,8 @@ namespace MilkyWare.Sarif.Converter.Commands
     {
         [CommandOption("-f|--file")]
         public string? File { get; set; }
+
+        [CommandOption("-t")]
+        public OutputType Type { get; set; }
     }
 }
