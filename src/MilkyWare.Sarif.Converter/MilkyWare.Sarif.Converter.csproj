@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -26,7 +26,7 @@
     <PackageReference Include="Sarif.Sdk" Version="4.5.4" />
     <PackageReference Include="Serilog.Extensions.Logging" Version="9.0.1" />
     <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
-    <PackageReference Include="Spectre.Console.Cli" Version="0.49.1" />
+    <PackageReference Include="Spectre.Console.Cli" Version="0.50.0" />
   </ItemGroup>
 
   <ItemGroup>
