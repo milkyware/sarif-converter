@@ -9,6 +9,6 @@ namespace MilkyWare.Sarif.Converter.Commands
         public string? File { get; set; }
 
         [CommandOption("-t")]
-        public OutputType Type { get; set; }
+        public OutputType OutputType { get; set; } = OutputType.JUnit;
     }
 }

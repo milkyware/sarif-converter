@@ -2,7 +2,7 @@
 {
     public enum OutputType
     {
-        NUnit,
-        TRX
+        JUnit,
+        NUnit
     }
 }
