@@ -14,9 +14,9 @@ namespace MilkyWare.Sarif.Converter.Commands
 
         public override async Task<int> ExecuteAsync(CommandContext context, ConvertSarifSettings settings)
         {
-            var sarif = SarifLog.Load(settings.File);
+            var sarif = SarifLog.Load(settings.InputFile);
 
-            var converter = _converters.FirstOrDefault(c => c.OutputType == settings.OutputType);
+            var converter = _converters.FirstOrDefault(c => c.FormatType == settings.FormatType);
             if (converter == null)
             {
                 _logger.LogError("Unsupported output type");
@@ -24,7 +24,20 @@ namespace MilkyWare.Sarif.Converter.Commands
             }
 
             var xml = await converter.ConvertAsync(sarif);
-            _ansiConsole.Write(xml);
+
+            if (string.IsNullOrEmpty(settings.OutputFile))
+            {
+                _ansiConsole.Write(xml);
+                return 0;
+            }
+
+            var directory = Path.GetDirectoryName(settings.OutputFile);
+            if (!string.IsNullOrEmpty(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
+            await File.WriteAllTextAsync(settings.OutputFile, xml);
             return 0;
         }
     }

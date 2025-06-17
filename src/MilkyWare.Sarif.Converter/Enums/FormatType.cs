@@ -1,6 +1,6 @@
 ﻿namespace MilkyWare.Sarif.Converter.Enums
 {
-    public enum OutputType
+    public enum FormatType
     {
         JUnit,
         NUnit

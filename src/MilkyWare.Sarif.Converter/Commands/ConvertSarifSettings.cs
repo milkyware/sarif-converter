@@ -5,10 +5,13 @@ namespace MilkyWare.Sarif.Converter.Commands
 {
     public class ConvertSarifSettings : LoggingSettings
     {
-        [CommandOption("-f|--file")]
-        public string? File { get; set; }
-
         [CommandOption("-t")]
-        public OutputType OutputType { get; set; } = OutputType.JUnit;
+        public FormatType FormatType { get; set; } = FormatType.JUnit;
+
+        [CommandOption("-i|--input-file")]
+        public string? InputFile { get; set; }
+
+        [CommandOption("-o|--output-file")]
+        public string? OutputFile { get; set; }
     }
 }

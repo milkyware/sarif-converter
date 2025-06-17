@@ -11,7 +11,7 @@ namespace MilkyWare.Sarif.Converter.Converters
     {
         private readonly ILogger<JUnitConverter> _logger = logger;
 
-        public OutputType OutputType => OutputType.JUnit;
+        public FormatType FormatType => FormatType.JUnit;
 
         public async Task<string> ConvertAsync(SarifLog sarif)
         {

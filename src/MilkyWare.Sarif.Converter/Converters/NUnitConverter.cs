@@ -6,7 +6,7 @@ namespace MilkyWare.Sarif.Converter.Converters
 {
     public class NUnitConverter : ISarifConverter
     {
-        public OutputType OutputType => OutputType.NUnit;
+        public FormatType FormatType => FormatType.NUnit;
 
         public async Task<string> ConvertAsync(SarifLog sarif)
         {

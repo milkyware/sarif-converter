@@ -5,7 +5,7 @@ namespace MilkyWare.Sarif.Converter.Converters
 {
     public interface ISarifConverter
     {
-        public OutputType OutputType { get; }
+        public FormatType FormatType { get; }
 
         Task<string> ConvertAsync(SarifLog sarif);
     }
