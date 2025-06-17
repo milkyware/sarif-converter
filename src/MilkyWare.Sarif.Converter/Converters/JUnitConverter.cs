@@ -15,6 +15,7 @@ namespace MilkyWare.Sarif.Converter.Converters
 
         public async Task<string> ConvertAsync(SarifLog sarif)
         {
+            _logger.LogInformation("Converting SARIF to JUnit");
             var testSuite = new XElement("test-suite");
             var resultsCount = sarif.Runs.SelectMany(r => r.Results)
                 .Count();
@@ -43,9 +44,9 @@ namespace MilkyWare.Sarif.Converter.Converters
             using var xw = XmlWriter.Create(sb, new()
             {
                 Async = true,
-                OmitXmlDeclaration = false,
-                Encoding = Encoding.UTF8,
-                Indent = true,
+                Encoding = Encoding.ASCII,
+                OmitXmlDeclaration = true,
+                Indent = true
             });
             await testSuites.SaveAsync(xw, default);
             await xw.FlushAsync();

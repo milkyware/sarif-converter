@@ -86,7 +86,6 @@ namespace MilkyWare.Sarif.Converter.Converters.Tests
             // Assert
             actual.Should()
                 .Be("""
-                <?xml version="1.0" encoding="utf-16"?>
                 <test-suites tests="2" failures="2">
                   <test-suite>
                     <testcase classname="outputs-should-not-contain-secrets" file="C:\Git\milkyware\azure-bicep\.tmp\storageaccount.bicep" line="206:113">
