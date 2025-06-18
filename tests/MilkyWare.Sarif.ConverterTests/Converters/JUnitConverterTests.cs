@@ -89,10 +89,10 @@ namespace MilkyWare.Sarif.Converter.Converters.Tests
                 <testsuites tests="2" failures="2">
                   <testsuite>
                     <testcase name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets]" classname="outputs-should-not-contain-secrets" file="C:\Git\milkyware\azure-bicep\.tmp\storageaccount.bicep" line="206:113">
-                      <failure />
+                      <failure type="AssertionError" />
                     </testcase>
                     <testcase name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets]" classname="outputs-should-not-contain-secrets" file="C:\Git\milkyware\azure-bicep\.tmp\storageaccount.bicep" line="207:35">
-                      <failure />
+                      <failure type="AssertionError" />
                     </testcase>
                   </testsuite>
                 </testsuites>

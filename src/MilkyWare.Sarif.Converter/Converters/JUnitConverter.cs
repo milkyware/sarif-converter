@@ -33,9 +33,9 @@ namespace MilkyWare.Sarif.Converter.Converters
                         new XAttribute("name", result.Message.Text),
                         new XAttribute("classname", result.RuleId),
                         new XAttribute("file", location.ArtifactLocation.Uri.LocalPath),
-                        new XAttribute("line", $"{location.Region.StartLine}:{location.Region.CharOffset}"));
-
-                    testCase.Add(new XElement("failure"));
+                        new XAttribute("line", $"{location.Region.StartLine}:{location.Region.CharOffset}"),
+                        new XElement("failure",
+                            new XAttribute("type", "AssertionError")));
 
                     testSuite.Add(testCase);
                 }
