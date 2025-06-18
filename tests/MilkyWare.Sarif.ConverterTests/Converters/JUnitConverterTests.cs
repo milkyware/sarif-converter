@@ -86,16 +86,16 @@ namespace MilkyWare.Sarif.Converter.Converters.Tests
             // Assert
             actual.Should()
                 .Be("""
-                <test-suites tests="2" failures="2">
-                  <test-suite>
+                <testsuites tests="2" failures="2">
+                  <testsuite>
                     <testcase classname="outputs-should-not-contain-secrets" file="C:\Git\milkyware\azure-bicep\.tmp\storageaccount.bicep" line="206:113">
                       <failure message="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets]" />
                     </testcase>
                     <testcase classname="outputs-should-not-contain-secrets" file="C:\Git\milkyware\azure-bicep\.tmp\storageaccount.bicep" line="207:35">
                       <failure message="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets]" />
                     </testcase>
-                  </test-suite>
-                </test-suites>
+                  </testsuite>
+                </testsuites>
                 """);
         }
     }

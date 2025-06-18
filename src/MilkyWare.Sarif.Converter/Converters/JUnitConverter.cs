@@ -16,10 +16,10 @@ namespace MilkyWare.Sarif.Converter.Converters
         public async Task<string> ConvertAsync(SarifLog sarif)
         {
             _logger.LogInformation("Converting SARIF to JUnit");
-            var testSuite = new XElement("test-suite");
+            var testSuite = new XElement("testsuite");
             var resultsCount = sarif.Runs.SelectMany(r => r.Results)
                 .Count();
-            var testSuites = new XElement("test-suites", testSuite,
+            var testSuites = new XElement("testsuites", testSuite,
                 new XAttribute("tests", resultsCount),
                 new XAttribute("failures", resultsCount));
 
