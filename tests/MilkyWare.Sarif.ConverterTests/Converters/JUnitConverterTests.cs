@@ -88,11 +88,11 @@ namespace MilkyWare.Sarif.Converter.Converters.Tests
                 .Be("""
                 <testsuites tests="2" failures="2">
                   <testsuite>
-                    <testcase classname="outputs-should-not-contain-secrets" file="C:\Git\milkyware\azure-bicep\.tmp\storageaccount.bicep" line="206:113">
-                      <failure message="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets]" />
+                    <testcase name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets]" classname="outputs-should-not-contain-secrets" file="C:\Git\milkyware\azure-bicep\.tmp\storageaccount.bicep" line="206:113">
+                      <failure />
                     </testcase>
-                    <testcase classname="outputs-should-not-contain-secrets" file="C:\Git\milkyware\azure-bicep\.tmp\storageaccount.bicep" line="207:35">
-                      <failure message="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets]" />
+                    <testcase name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets]" classname="outputs-should-not-contain-secrets" file="C:\Git\milkyware\azure-bicep\.tmp\storageaccount.bicep" line="207:35">
+                      <failure />
                     </testcase>
                   </testsuite>
                 </testsuites>

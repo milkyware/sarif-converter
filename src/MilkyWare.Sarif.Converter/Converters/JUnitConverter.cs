@@ -30,11 +30,12 @@ namespace MilkyWare.Sarif.Converter.Converters
                     var location = result.Locations[0].PhysicalLocation;
 
                     var testCase = new XElement("testcase",
+                        new XAttribute("name", result.Message.Text),
                         new XAttribute("classname", result.RuleId),
                         new XAttribute("file", location.ArtifactLocation.Uri.LocalPath),
                         new XAttribute("line", $"{location.Region.StartLine}:{location.Region.CharOffset}"));
 
-                    testCase.Add(new XElement("failure", new XAttribute("message", result.Message.Text)));
+                    testCase.Add(new XElement("failure"));
 
                     testSuite.Add(testCase);
                 }
