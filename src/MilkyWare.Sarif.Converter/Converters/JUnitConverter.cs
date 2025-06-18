@@ -40,18 +40,20 @@ namespace MilkyWare.Sarif.Converter.Converters
                 }
             }
 
-            var sb = new StringBuilder();
-            using var xw = XmlWriter.Create(sb, new()
+            using var ms = new MemoryStream();
+            using var xw = XmlWriter.Create(ms, new()
             {
                 Async = true,
-                Encoding = Encoding.ASCII,
                 OmitXmlDeclaration = true,
                 Indent = true
             });
             await testSuites.SaveAsync(xw, default);
             await xw.FlushAsync();
 
-            return sb.ToString();
+            ms.Position = 0;
+            var sr = new StreamReader(ms, Encoding.UTF8);
+            var xml = await sr.ReadToEndAsync();
+            return xml;
         }
     }
 }
