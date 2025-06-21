@@ -29,11 +29,12 @@ namespace MilkyWare.Sarif.Converter.Converters
                 {
                     var location = result.Locations[0].PhysicalLocation;
 
+                    var relativePath = Path.GetRelativePath(Environment.CurrentDirectory, location.ArtifactLocation.Uri.LocalPath);
+                    var line = $"{location.Region.StartLine}:{location.Region.CharOffset}";
+
                     var testCase = new XElement("testcase",
-                        new XAttribute("name", result.Message.Text),
+                        new XAttribute("name", $"{result.Message.Text} - {relativePath}:{line}"),
                         new XAttribute("classname", result.RuleId),
-                        new XAttribute("file", location.ArtifactLocation.Uri.LocalPath),
-                        new XAttribute("line", $"{location.Region.StartLine}:{location.Region.CharOffset}"),
                         new XElement("failure",
                             new XAttribute("type", "AssertionError")));
 

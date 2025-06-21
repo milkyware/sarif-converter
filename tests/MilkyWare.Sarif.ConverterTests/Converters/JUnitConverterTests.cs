@@ -20,7 +20,7 @@ namespace MilkyWare.Sarif.Converter.Converters.Tests
             // Arrange
             using var ms = new MemoryStream();
             using var sw = new StreamWriter(ms);
-            await sw.WriteAsync("""
+            await sw.WriteAsync($$"""
                                 {
                     "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.6.json",
                     "version": "2.1.0",
@@ -41,7 +41,7 @@ namespace MilkyWare.Sarif.Converter.Converters.Tests
                                         {
                                             "physicalLocation": {
                                                 "artifactLocation": {
-                                                    "uri": "file:///C:/Git/milkyware/azure-bicep/./.tmp/storageaccount.bicep"
+                                                    "uri": "{{new Uri(Environment.CurrentDirectory)}}/.tmp/storageaccount.bicep"
                                                 },
                                                 "region": {
                                                     "startLine": 206,
@@ -60,7 +60,7 @@ namespace MilkyWare.Sarif.Converter.Converters.Tests
                                         {
                                             "physicalLocation": {
                                                 "artifactLocation": {
-                                                    "uri": "file:///C:/Git/milkyware/azure-bicep/./.tmp/storageaccount.bicep"
+                                                    "uri": "{{new Uri(Environment.CurrentDirectory)}}/.tmp/storageaccount.bicep"
                                                 },
                                                 "region": {
                                                     "startLine": 207,
@@ -88,10 +88,10 @@ namespace MilkyWare.Sarif.Converter.Converters.Tests
                 .Be("""
                 <testsuites tests="2" failures="2">
                   <testsuite>
-                    <testcase name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets]" classname="outputs-should-not-contain-secrets" file="C:\Git\milkyware\azure-bicep\.tmp\storageaccount.bicep" line="206:113">
+                    <testcase name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets] - .tmp\storageaccount.bicep:206:113" classname="outputs-should-not-contain-secrets">
                       <failure type="AssertionError" />
                     </testcase>
-                    <testcase name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets]" classname="outputs-should-not-contain-secrets" file="C:\Git\milkyware\azure-bicep\.tmp\storageaccount.bicep" line="207:35">
+                    <testcase name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets] - .tmp\storageaccount.bicep:207:35" classname="outputs-should-not-contain-secrets">
                       <failure type="AssertionError" />
                     </testcase>
                   </testsuite>
