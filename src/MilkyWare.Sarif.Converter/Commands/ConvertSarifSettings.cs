@@ -5,7 +5,7 @@ namespace MilkyWare.Sarif.Converter.Commands
 {
     public class ConvertSarifSettings : LoggingSettings
     {
-        [CommandOption("-t")]
+        [CommandOption("-f|--format")]
         public FormatType FormatType { get; set; } = FormatType.JUnit;
 
         [CommandOption("-i|--input-file")]
