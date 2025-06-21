@@ -17,6 +17,7 @@ services.AddLogging(builder =>
 });
 services.AddTransient<ICommandInterceptor, LoggingInterceptor>();
 services.AddSingleton<ISarifConverter, JUnitConverter>();
+services.AddSingleton<ISarifConverter, NUnitConverter>();
 
 var registrar = new TypeRegistrar(services);
 var app = new CommandApp<ConvertSarifCommand>(registrar);
