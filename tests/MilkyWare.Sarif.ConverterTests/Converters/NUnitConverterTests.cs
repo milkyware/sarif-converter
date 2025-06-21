@@ -88,10 +88,8 @@ namespace MilkyWare.Sarif.Converter.Converters.Tests
                 .Be("""
                 <test-run testcasecount="2" total="2" failed="2" result="Failed">
                   <test-suite>
-                    <test-case name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets]"
-                classname="outputs-should-not-contain-secrets" result="Failed" />
-                    <test-case name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets]"
-                classname="outputs-should-not-contain-secrets" result="Failed" />
+                    <test-case name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets]" classname="outputs-should-not-contain-secrets" result="Failed" />
+                    <test-case name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets]" classname="outputs-should-not-contain-secrets" result="Failed" />
                   </test-suite>
                 </test-run>
                 """);
