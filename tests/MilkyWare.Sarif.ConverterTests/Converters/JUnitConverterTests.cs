@@ -85,13 +85,13 @@ namespace MilkyWare.Sarif.Converter.Converters.Tests
 
             // Assert
             actual.Should()
-                .Be("""
+                .Be($$"""
                 <testsuites tests="2" failures="2">
                   <testsuite>
-                    <testcase name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets] - .tmp\storageaccount.bicep:206:113" classname="outputs-should-not-contain-secrets">
+                    <testcase name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets] - .tmp{{Path.DirectorySeparatorChar}}storageaccount.bicep:206:113" classname="outputs-should-not-contain-secrets">
                       <failure type="AssertionError" />
                     </testcase>
-                    <testcase name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets] - .tmp\storageaccount.bicep:207:35" classname="outputs-should-not-contain-secrets">
+                    <testcase name="Outputs should not contain secrets. Found possible secret: function 'listKeys' [https://aka.ms/bicep/linter/outputs-should-not-contain-secrets] - .tmp{{Path.DirectorySeparatorChar}}storageaccount.bicep:207:35" classname="outputs-should-not-contain-secrets">
                       <failure type="AssertionError" />
                     </testcase>
                   </testsuite>
