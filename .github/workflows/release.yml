@@ -75,7 +75,7 @@ jobs:
           name: ${{ env.ARTIFACT_NAME}}
           path: ${{ runner.temp }}/nupkg/*.nupkg
 
-  publish:
+  publish-devops:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -116,3 +116,41 @@ jobs:
             throw $message
           }
           $output
+  
+  publish-nuget:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Environment Variables
+        shell: pwsh
+        run: |
+          Get-ChildItem Env: | ForEach-Object {Write-Host "$($_.Name)=$($_.Value)"}
+
+      - name: Download Artifact
+        id: download-artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+
+      - name: Setup Dotnet
+        id: setup-dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Nuget Push
+        shell: pwsh
+        run: |
+          if ($env:RUNNER_DEBUG)
+          {
+              $VerbosePreference = "Continue"
+          }
+          $path = "${{ steps.download-artifact.outputs.download-path }}/*.nupkg"
+          Write-Verbose "path=$path"
+          $output = dotnet nuget push $path --skip-duplicate --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+          if ($LASTEXITCODE) {
+            $message = $output -match "error:.*"
+            throw $message
+          }
+          $output
+
