@@ -88,7 +88,7 @@ jobs:
         id: download-artifact
         uses: actions/download-artifact@v4
         with:
-          name: ${{ env.ARTIFACT_NAME}}
+          name: ${{ env.ARTIFACT_NAME }}
 
       - name: Setup Dotnet
         id: setup-dotnet
