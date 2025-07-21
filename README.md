@@ -11,6 +11,7 @@
   - [Usage](#usage)
     - [Checking version](#checking-version)
     - [Convert SARIF to JUnit](#convert-sarif-to-junit)
+  - [Contributing](#contributing)
   - [References](#references)
 
 ## About the Project
@@ -70,13 +71,34 @@ milkyware-sarif-converter --version
 
 ### Convert SARIF to JUnit
 
-```sh
-milkyware-sarif-converter -i test.sarif
-```
+To convert a SARIF file to the ***default*** format, use the following:
 
 ```sh
-milkyware-sarif-converter -i test.sarif -o test.xml
+milkyware-sarif-converter --input-file test.sarif
 ```
+
+The command can also write the resulting converted file direct to disk:
+
+```sh
+milkyware-sarif-converter --input-file test.sarif --output-file test.xml
+```
+
+The output format can also be manually specified using `--format`:
+
+```sh
+milkyware-sarif-converter --input-file test.sarif --output-file test.xml --format JUnit
+```
+
+## Contributing
+
+Contributions are welcome! If you have suggestions, bug reports, or want to add new features, please follow these steps:
+
+1. [Fork the repository](https://github.com/milkyware/sarif-converter/fork).
+2. Create a new branch for your changes.
+3. Make your changes and ensure all tests pass.
+4. Submit a pull request with a clear description of your changes.
+
+Please review existing issues and pull requests before starting work. For major changes, open an issue first to discuss your ideas.
 
 ## References
 
