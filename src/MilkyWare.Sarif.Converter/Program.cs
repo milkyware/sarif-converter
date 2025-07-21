@@ -24,6 +24,7 @@ var app = new CommandApp<ConvertSarifCommand>(registrar);
 app.Configure(configure =>
 {
     configure.SetApplicationName("milkyware-sarif-converter");
+    configure.UseAssemblyInformationalVersion();
 
 #if DEBUG
     configure.PropagateExceptions();
