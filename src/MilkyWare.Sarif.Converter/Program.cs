@@ -25,6 +25,8 @@ app.Configure(configure =>
 {
     configure.SetApplicationName("milkyware-sarif-converter");
     configure.UseAssemblyInformationalVersion();
+    configure.AddExample("-i", @"./test.sarif.json", "-f", "JUnit")
+        .AddExample("-i", @"./test.sarif.json", "-o", "./test.xml", "-f", "JUnit");
 
 #if DEBUG
     configure.PropagateExceptions();
