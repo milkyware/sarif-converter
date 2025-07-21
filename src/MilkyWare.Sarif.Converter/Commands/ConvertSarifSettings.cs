@@ -7,7 +7,7 @@ namespace MilkyWare.Sarif.Converter.Commands
     public class ConvertSarifSettings : LoggingSettings
     {
         [CommandOption("-f|--format")]
-        [Description("Format to convert to")]
+        [Description("Format to convert SARIF to. Allowed values: JUnit, NUnit")]
         public FormatType FormatType { get; set; } = FormatType.JUnit;
 
         [CommandOption("-i|--input-file")]
