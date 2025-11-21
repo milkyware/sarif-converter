@@ -1,4 +1,4 @@
-﻿using Microsoft.CodeAnalysis.Sarif;
+using Microsoft.CodeAnalysis.Sarif;
 using Microsoft.Extensions.Logging;
 using MilkyWare.Sarif.Converter.Converters;
 using Spectre.Console;
@@ -12,7 +12,7 @@ namespace MilkyWare.Sarif.Converter.Commands
         private readonly IEnumerable<ISarifConverter> _converters = converters;
         private readonly ILogger<ConvertSarifCommand> _logger = logger;
 
-        public override async Task<int> ExecuteAsync(CommandContext context, ConvertSarifSettings settings)
+        public override async Task<int> ExecuteAsync(CommandContext context, ConvertSarifSettings settings, CancellationToken cancellationToken)
         {
             var sarif = SarifLog.Load(settings.InputFile);
 
