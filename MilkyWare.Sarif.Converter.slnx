@@ -1,0 +1,13 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/src/">
+    <Project Path="src/MilkyWare.Sarif.Converter/MilkyWare.Sarif.Converter.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MilkyWare.Sarif.ConverterTests/MilkyWare.Sarif.ConverterTests.csproj" />
+  </Folder>
+</Solution>
