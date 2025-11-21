@@ -1,4 +1,4 @@
-﻿using Microsoft.CodeAnalysis.Sarif;
+using Microsoft.CodeAnalysis.Sarif;
 using Microsoft.Extensions.Logging;
 using MilkyWare.Sarif.Converter.Converters;
 using MilkyWare.Sarif.Converter.Enums;
@@ -99,7 +99,7 @@ namespace MilkyWare.Sarif.Converter.Commands.Tests
             try
             {
                 // Act
-                actual = await _command.ExecuteAsync(context, settings);
+                actual = await _command.ExecuteAsync(context, settings, new());
             }
             finally
             {
@@ -194,7 +194,7 @@ namespace MilkyWare.Sarif.Converter.Commands.Tests
             try
             {
                 // Act
-                var actual = await _command.ExecuteAsync(context, settings);
+                var actual = await _command.ExecuteAsync(context, settings, new());
 
                 // Assert
                 actual.Should()
@@ -288,7 +288,7 @@ namespace MilkyWare.Sarif.Converter.Commands.Tests
             try
             {
                 // Act
-                actual = await _command.ExecuteAsync(context, settings);
+                actual = await _command.ExecuteAsync(context, settings, new());
             }
             finally
             {
