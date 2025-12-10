@@ -26,7 +26,7 @@
     <PackageReference Include="Sarif.Sdk" Version="4.6.0" />
     <PackageReference Include="Serilog.Extensions.Logging" Version="10.0.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
-    <PackageReference Include="Spectre.Console.Cli" Version="0.53.0" />
+    <PackageReference Include="Spectre.Console.Cli" Version="0.53.1" />
   </ItemGroup>
 
   <ItemGroup>
