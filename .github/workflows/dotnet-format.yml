@@ -1,0 +1,36 @@
+name: Dotnet Format
+
+on: 
+  pull_request:
+    paths:
+      - "src/**"
+      - "tests/**"
+  workflow_dispatch:
+
+env:
+  DOTNET_VERSION: 10.0.x
+
+jobs:
+  format:
+    name: Format Dotnet
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Dotnet
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: ${{env.DOTNET_VERSION}}
+
+      - name: Dotnet Version
+        run: dotnet --version
+
+      - name: Format
+        run: dotnet format .
+
+      - uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: Formatted Dotnet
