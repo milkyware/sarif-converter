@@ -15,7 +15,7 @@ on:
 env:
   ARTIFACT_NAME: package
   DOTNET_VERSION: 10.0.x
-  PROJET_NAME: MilkyWare.Sarif.Converter
+  PROJECT_NAME: MilkyWare.Sarif.Converter
 
 permissions:
   actions: read
@@ -62,7 +62,7 @@ jobs:
       - name: Pack
         shell: pwsh
         run: |
-          dotnet pack ./src/${{env.PROJET_NAME}} -o ${{ runner.temp }}/nupkg `
+          dotnet pack ./src/${{env.PROJECT_NAME}} -o ${{ runner.temp }}/nupkg `
             -p:Version="${{ inputs.version }}" `
             -p:SourceRevisionId="${{ steps.shorten-git-hash.outputs.hash }}" `
             -p:SourceBranchName="${{ github.ref_name }}"
