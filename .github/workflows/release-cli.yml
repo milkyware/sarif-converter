@@ -1,0 +1,177 @@
+name: Release
+
+on: 
+  workflow_call:
+    inputs:
+      tag_name:
+        description: The tag name to release the CLI to, e.g. v1.0.0
+        required: true
+        type: string
+      version:
+        description: The full semantic version of the CLI to release, e.g. 1.0.0
+        required: true
+        type: string
+
+env:
+  ARTIFACT_NAME: package
+  DOTNET_VERSION: 10.0.x
+  PROJET_NAME: MilkyWare.Sarif.Converter
+
+permissions:
+  actions: read
+  checks: write
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Print Environment Variables
+        uses: milkyware/actions/print-env-vars@main
+
+      - name: Shorten Git Hash
+        id: shorten-git-hash
+        uses: milkyware/actions/shorten-git-hash@main
+
+      - name: Setup Dotnet
+        id: setup-dotnet
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+  
+      - name: Dotnet Version
+        id: dotnet-version
+        run: dotnet --version
+
+      - name: Test
+        run: dotnet test --logger trx --collect "Code coverage" --results-directory ${{ runner.temp }}/results
+
+      - name: Publish Results
+        uses: dorny/test-reporter@v2
+        if: success() || failure()
+        with:
+          name: test-results
+          path: ${{runner.temp}}/results/*.trx
+          reporter: dotnet-trx
+
+      - name: Pack
+        shell: pwsh
+        run: |
+          dotnet pack ./src/${{env.PROJET_NAME}} -o ${{ runner.temp }}/nupkg `
+            -p:Version="${{ inputs.version }}" `
+            -p:SourceRevisionId="${{ steps.shorten-git-hash.outputs.hash }}" `
+            -p:SourceBranchName="${{ github.ref_name }}"
+
+      - name: Upload Artifact
+        id: upload-artifact
+        uses: actions/upload-artifact@v6
+        with: 
+          name: ${{ env.ARTIFACT_NAME}}
+          path: ${{ runner.temp }}/nupkg/*.nupkg
+
+  publish-github:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Environment Variables
+        uses: milkyware/actions/print-env-vars@main
+
+      - name: Download Artifact
+        id: download-artifact
+        uses: actions/download-artifact@v7
+        with:
+          name: ${{ env.ARTIFACT_NAME}}
+
+      - name: Upload Asset
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload ${{ inputs.tag_name }} `
+            ${{ steps.download-artifact.outputs.download-path }}/*.nupkg `
+            --repo ${{ github.repository }}
+
+
+  publish-devops:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Environment Variables
+        uses: milkyware/actions/print-env-vars@main
+
+      - name: Download Artifact
+        id: download-artifact
+        uses: actions/download-artifact@v7
+        with:
+          name: ${{ env.ARTIFACT_NAME}}
+
+      - name: Setup Dotnet
+        id: setup-dotnet
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Add Nuget Source
+        shell: pwsh
+        run: |
+          dotnet nuget add source ${{ secrets.AZ_DEVOPS_FEED }} `
+            --name MilkyWare `
+            --username ${{ secrets.AZ_DEVOPS_USERNAME }} `
+            --password ${{ secrets.AZ_DEVOPS_PASSWORD }} `
+            --store-password-in-clear-text
+
+      - name: Nuget Push
+        shell: pwsh
+        run: |
+          if ($env:RUNNER_DEBUG)
+          {
+              $VerbosePreference = "Continue"
+          }
+          $path = "${{ steps.download-artifact.outputs.download-path }}/*.nupkg"
+          Write-Verbose "path=$path"
+          $output = dotnet nuget push $path --source MilkyWare --skip-duplicate --api-key dummy
+          if ($LASTEXITCODE) {
+            $message = $output -match "error:.*"
+            throw $message
+          }
+          $output
+
+  publish-nuget:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Environment Variables
+        uses: milkyware/actions/print-env-vars@main
+
+      - name: Download Artifact
+        id: download-artifact
+        uses: actions/download-artifact@v7
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+
+      - name: Setup Dotnet
+        id: setup-dotnet
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Nuget Push
+        shell: pwsh
+        run: |
+          if ($env:RUNNER_DEBUG)
+          {
+              $VerbosePreference = "Continue"
+          }
+          $path = "${{ steps.download-artifact.outputs.download-path }}/*.nupkg"
+          Write-Verbose "path=$path"
+          $output = dotnet nuget push $path --skip-duplicate --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+          if ($LASTEXITCODE) {
+            $message = $output -match "error:.*"
+            throw $message
+          }
+          $output
