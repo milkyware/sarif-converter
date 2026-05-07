@@ -3,6 +3,7 @@
   "extends": [
     "config:recommended",
     ":automergeMinor",
+    ":semanticCommits",
     "security:openssf-scorecard"
   ],
   "labels": [
