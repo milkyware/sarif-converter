@@ -1,4 +1,4 @@
-﻿using Microsoft.CodeAnalysis.Sarif;
+using Microsoft.CodeAnalysis.Sarif;
 using Microsoft.Extensions.Logging;
 
 namespace MilkyWare.Sarif.Converter.Converters.Tests

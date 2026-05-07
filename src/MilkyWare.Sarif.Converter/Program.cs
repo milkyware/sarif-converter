@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using MilkyWare.Sarif.Converter;
 using MilkyWare.Sarif.Converter.Commands;
 using MilkyWare.Sarif.Converter.Converters;

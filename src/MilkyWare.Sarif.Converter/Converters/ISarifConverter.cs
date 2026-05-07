@@ -1,4 +1,4 @@
-﻿using Microsoft.CodeAnalysis.Sarif;
+using Microsoft.CodeAnalysis.Sarif;
 using MilkyWare.Sarif.Converter.Enums;
 
 namespace MilkyWare.Sarif.Converter.Converters

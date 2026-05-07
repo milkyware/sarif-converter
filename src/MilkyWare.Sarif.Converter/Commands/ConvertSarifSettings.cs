@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using MilkyWare.Sarif.Converter.Enums;
 using Spectre.Console.Cli;
 
