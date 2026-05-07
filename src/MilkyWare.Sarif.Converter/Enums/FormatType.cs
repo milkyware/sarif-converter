@@ -1,4 +1,4 @@
-﻿namespace MilkyWare.Sarif.Converter.Enums
+namespace MilkyWare.Sarif.Converter.Enums
 {
     public enum FormatType
     {

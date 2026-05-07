@@ -1,4 +1,4 @@
-﻿using MilkyWare.Sarif.Converter.Commands;
+using MilkyWare.Sarif.Converter.Commands;
 using Serilog.Events;
 using Spectre.Console.Cli;
 
