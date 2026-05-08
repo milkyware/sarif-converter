@@ -2,7 +2,7 @@
   "exclude-paths": [
     ".git",
     ".idea",
-    ".github",
+    ".github/renovate.json",
     ".vscode"
   ],
   "release-type": "simple",
