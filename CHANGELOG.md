@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.21](https://github.com/milkyware/sarif-converter/compare/v0.0.20...v0.0.21) (2026-05-08)
+
+
+### Bug fixes
+
+* allow secrets in cli workflow ([ef991b0](https://github.com/milkyware/sarif-converter/commit/ef991b0fbc957422cf78f29f6bc0a61257136331))
+
 ## [0.0.20](https://github.com/milkyware/sarif-converter/compare/v0.0.19...v0.0.20) (2026-05-08)
 
 
