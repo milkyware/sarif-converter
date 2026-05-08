@@ -78,6 +78,12 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            .github/actions
+
       - name: Print Environment Variables
         uses: ./.github/actions/print-env-vars
 
@@ -101,6 +107,12 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            .github/actions
+
       - name: Print Environment Variables
         uses: ./.github/actions/print-env-vars
 
@@ -145,6 +157,12 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            .github/actions
+
       - name: Print Environment Variables
         uses: ./.github/actions/print-env-vars
 
