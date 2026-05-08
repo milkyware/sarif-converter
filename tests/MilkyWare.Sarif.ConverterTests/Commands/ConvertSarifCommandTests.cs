@@ -1,27 +1,31 @@
 using Microsoft.CodeAnalysis.Sarif;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MilkyWare.Sarif.Converter.Converters;
 using MilkyWare.Sarif.Converter.Enums;
+using MilkyWare.Sarif.ConverterTests;
 using Spectre.Console;
 using Spectre.Console.Cli;
+using Spectre.Console.Cli.Testing;
 
 namespace MilkyWare.Sarif.Converter.Commands.Tests
 {
     public class ConvertSarifCommandTests
     {
-        private readonly IAnsiConsole _ansiConsole;
-        private readonly ConvertSarifCommand _command;
-        private readonly ISarifConverter _converter;
-        private readonly ILogger<ConvertSarifCommand> _logger;
+        private readonly CommandAppTester _app;
+        private readonly ISarifConverter _converter = Substitute.For<ISarifConverter>();
+        private readonly ILogger<ConvertSarifCommand> _logger = Substitute.For<ILogger<ConvertSarifCommand>>();
 
         public ConvertSarifCommandTests()
         {
-            _logger = Substitute.For<ILogger<ConvertSarifCommand>>();
-            _ansiConsole = Substitute.For<IAnsiConsole>();
-            _converter = Substitute.For<ISarifConverter>();
             _converter.ConvertAsync(Arg.Any<SarifLog>())
                 .Returns("<results />");
-            _command = new ConvertSarifCommand(_logger, _ansiConsole, [_converter]);
+
+            _app = CommandAppTestHarness.Create<ConvertSarifCommand>("convert-sarif", services =>
+            {
+                services.AddSingleton(_logger);
+                services.AddSingleton(_converter);
+            });
         }
 
         [Fact()]
@@ -95,11 +99,11 @@ namespace MilkyWare.Sarif.Converter.Commands.Tests
                 FormatType = FormatType.JUnit
             };
 
-            int actual = 0;
+            CommandAppResult actual;
             try
             {
                 // Act
-                actual = await _command.ExecuteAsync(context, settings, new());
+                actual = await _app.RunAsync(["convert-sarif", "--input-file", inputFile, "--format-type", "JUnit"]);
             }
             finally
             {
@@ -107,12 +111,12 @@ namespace MilkyWare.Sarif.Converter.Commands.Tests
             }
 
             // Assert
-            actual.Should()
+            actual.ExitCode.Should()
                 .Be(0);
             await _converter.Received(1)
                 .ConvertAsync(Arg.Any<SarifLog>());
-            _ansiConsole.Received(1)
-                .Write(Arg.Any<Text>());
+            _app.Console.Output.Should()
+                .NotBeNullOrWhiteSpace();
         }
 
         [Fact()]
@@ -194,10 +198,14 @@ namespace MilkyWare.Sarif.Converter.Commands.Tests
             try
             {
                 // Act
-                var actual = await _command.ExecuteAsync(context, settings, new());
+                var actual = await _app.RunAsync([
+                    "convert-sarif",
+                    "--input-file", inputFile,
+                    "--output-file", outputFile,
+                    "--format-type", "JUnit"]);
 
                 // Assert
-                actual.Should()
+                actual.ExitCode.Should()
                     .Be(0);
                 await _converter.Received(1)
                     .ConvertAsync(Arg.Any<SarifLog>());
@@ -284,11 +292,11 @@ namespace MilkyWare.Sarif.Converter.Commands.Tests
                 FormatType = FormatType.JUnit
             };
 
-            int actual = 0;
+            CommandAppResult actual;
             try
             {
                 // Act
-                actual = await _command.ExecuteAsync(context, settings, new());
+                actual = await _app.RunAsync(["convert-sarif", "--input-file", inputFile, "--format-type", "JUnit"]);
             }
             finally
             {
@@ -296,7 +304,7 @@ namespace MilkyWare.Sarif.Converter.Commands.Tests
             }
 
             // Assert
-            actual.Should()
+            actual.ExitCode.Should()
                 .Be(1);
         }
     }
