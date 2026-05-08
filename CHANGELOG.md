@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.19](https://github.com/milkyware/sarif-converter/compare/v0.0.18...v0.0.19) (2026-05-08)
+
+
+### Bug fixes
+
+* release-cli workflow ([e2d167b](https://github.com/milkyware/sarif-converter/commit/e2d167bd3d8d7f1fd603bc4d1daa6081aeb55a2a))
+
+
+### Build system
+
+* include actions and workflows in versioning ([c546f49](https://github.com/milkyware/sarif-converter/commit/c546f49f95514db42e7aae5695b56aaa55ebee4f))
+
 ## [0.0.18](https://github.com/milkyware/sarif-converter/compare/v0.0.17...v0.0.18) (2026-05-08)
 
 
