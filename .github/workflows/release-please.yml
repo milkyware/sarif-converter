@@ -34,6 +34,7 @@ jobs:
       actions: read
       checks: write
       contents: write
+    secrets: inherit
     with:
       tag_name: ${{ needs.release-please.outputs.tag_name }}
       version: ${{ needs.release-please.outputs.version }}
