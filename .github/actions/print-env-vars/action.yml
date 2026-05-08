@@ -1,0 +1,9 @@
+name: Print Environment Variables
+description: Print all environment variables available in the job
+runs:
+  using: composite
+  steps:
+    - name: Print Environment Variables
+      shell: pwsh
+      run: |
+        Get-ChildItem Env: | ForEach-Object {Write-Host "$($_.Name)=$($_.Value)"}
