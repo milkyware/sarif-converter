@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.20](https://github.com/milkyware/sarif-converter/compare/v0.0.19...v0.0.20) (2026-05-08)
+
+
+### Bug fixes
+
+* sparse checkout local actions ([8dcd31d](https://github.com/milkyware/sarif-converter/commit/8dcd31d322cef0de1043ccd0091ba38da143777c))
+
 ## [0.0.19](https://github.com/milkyware/sarif-converter/compare/v0.0.18...v0.0.19) (2026-05-08)
 
 
