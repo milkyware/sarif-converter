@@ -1,5 +1,37 @@
 # Changelog
 
+## [0.0.22](https://github.com/milkyware/sarif-converter/compare/v0.0.21...v0.0.22) (2026-07-22)
+
+
+### Chores
+
+* **deps:** update actions/checkout action to v7 ([#70](https://github.com/milkyware/sarif-converter/issues/70)) ([6445638](https://github.com/milkyware/sarif-converter/commit/6445638bb3f392a10d0c9491b8bf4a40da760bf7))
+* **deps:** update dependency coverlet.collector to 10.0.1 ([#59](https://github.com/milkyware/sarif-converter/issues/59)) ([b5e9f56](https://github.com/milkyware/sarif-converter/commit/b5e9f5665e7223b75bf3c18e2b7e32303a69f917))
+* **deps:** update dependency fluentassertions to 8.10.0 ([#57](https://github.com/milkyware/sarif-converter/issues/57)) ([7f7478a](https://github.com/milkyware/sarif-converter/commit/7f7478ace52d84a4e905fdacf29050ec725e4d81))
+* **deps:** update dependency microsoft.net.test.sdk to 18.5.1 ([#54](https://github.com/milkyware/sarif-converter/issues/54)) ([72d0089](https://github.com/milkyware/sarif-converter/commit/72d00890a9b6dc20b461290ff43acfed74df3efc))
+* **deps:** update dependency microsoft.net.test.sdk to 18.7.0 ([#75](https://github.com/milkyware/sarif-converter/issues/75)) ([926e136](https://github.com/milkyware/sarif-converter/commit/926e13653c82d6f0a46c93339d4d2ab7e38ff8a9))
+* **deps:** update dependency sarif.sdk to 4.6.3 ([#56](https://github.com/milkyware/sarif-converter/issues/56)) ([167a5fb](https://github.com/milkyware/sarif-converter/commit/167a5fba579d483060e02d7391b9813ec0cf0c96))
+* **deps:** update dependency sarif.sdk to 4.6.4 ([#58](https://github.com/milkyware/sarif-converter/issues/58)) ([29a2011](https://github.com/milkyware/sarif-converter/commit/29a20118692708bba4944d4cb50729d9f10208c7))
+* **deps:** update dependency sarif.sdk to 4.6.5 ([#60](https://github.com/milkyware/sarif-converter/issues/60)) ([5764e73](https://github.com/milkyware/sarif-converter/commit/5764e73e44eb4c7fd82a97cf5ec4029fa451a31d))
+* **deps:** update dependency sarif.sdk to 5.0.10 ([#69](https://github.com/milkyware/sarif-converter/issues/69)) ([fe62092](https://github.com/milkyware/sarif-converter/commit/fe62092fbdd721bd281f50a491edfa8f4e009a36))
+* **deps:** update dependency sarif.sdk to 5.0.3 ([#63](https://github.com/milkyware/sarif-converter/issues/63)) ([fe99903](https://github.com/milkyware/sarif-converter/commit/fe99903ed3dde53dcadeed3f305d1bf12f5b8e55))
+* **deps:** update dependency sarif.sdk to 5.0.4 ([#64](https://github.com/milkyware/sarif-converter/issues/64)) ([10349c1](https://github.com/milkyware/sarif-converter/commit/10349c181557e281774b6d7fcf86a14a46c0a455))
+* **deps:** update dependency sarif.sdk to 5.0.5 ([#65](https://github.com/milkyware/sarif-converter/issues/65)) ([488b860](https://github.com/milkyware/sarif-converter/commit/488b860b103a4c142c6f2f59d0a692fc8c1b7d24))
+* **deps:** update dependency sarif.sdk to 5.0.6 ([#66](https://github.com/milkyware/sarif-converter/issues/66)) ([aaddb7e](https://github.com/milkyware/sarif-converter/commit/aaddb7e04423cfbc0beee1cf671d461830c861b4))
+* **deps:** update dependency sarif.sdk to 5.0.7 ([#67](https://github.com/milkyware/sarif-converter/issues/67)) ([818adc8](https://github.com/milkyware/sarif-converter/commit/818adc881e368d8c6548a018a4ff21cb7be878e8))
+* **deps:** update dependency sarif.sdk to 5.0.9 ([#68](https://github.com/milkyware/sarif-converter/issues/68)) ([8ad402d](https://github.com/milkyware/sarif-converter/commit/8ad402dc3abe5b1d4c27cc6b57292a9d08b7660a))
+* **deps:** update dependency sarif.sdk to 5.1.1 ([#71](https://github.com/milkyware/sarif-converter/issues/71)) ([a9db587](https://github.com/milkyware/sarif-converter/commit/a9db587a8ee83827915c6e00a321c12d3b9580db))
+* **deps:** update dependency sarif.sdk to 5.2.0 ([#72](https://github.com/milkyware/sarif-converter/issues/72)) ([f4d9a37](https://github.com/milkyware/sarif-converter/commit/f4d9a379088744d46654bbbd305125d85460d903))
+* **deps:** update dependency sarif.sdk to 5.3.0 ([#73](https://github.com/milkyware/sarif-converter/issues/73)) ([5310797](https://github.com/milkyware/sarif-converter/commit/531079777f637776dc0919f9a41941a020dc0d93))
+* **deps:** update dependency sarif.sdk to 5.3.1 ([#74](https://github.com/milkyware/sarif-converter/issues/74)) ([85cb43d](https://github.com/milkyware/sarif-converter/commit/85cb43d3d7d75fb24f9a790dee597c674a1cde57))
+* **deps:** update dependency sarif.sdk to 5.4.0 ([#76](https://github.com/milkyware/sarif-converter/issues/76)) ([3bd5cea](https://github.com/milkyware/sarif-converter/commit/3bd5cea44c15b0e487b1d1b1cb8641c863b3c069))
+* **deps:** update dependency sarif.sdk to 5.4.1 ([#77](https://github.com/milkyware/sarif-converter/issues/77)) ([9de2f35](https://github.com/milkyware/sarif-converter/commit/9de2f354de2d733b97433976009a2d2b1e6ab34b))
+* **deps:** update dependency sarif.sdk to 5.4.2 ([#78](https://github.com/milkyware/sarif-converter/issues/78)) ([87bd57e](https://github.com/milkyware/sarif-converter/commit/87bd57ed7e473269c1174fd2b856b84d33063618))
+* **deps:** update dependency sarif.sdk to 5.4.3 ([#79](https://github.com/milkyware/sarif-converter/issues/79)) ([cc685f6](https://github.com/milkyware/sarif-converter/commit/cc685f683ee3ca56b7d0bb9cab43ddc36f4c1833))
+* **deps:** update dependency sarif.sdk to 5.5.0 ([#80](https://github.com/milkyware/sarif-converter/issues/80)) ([9ce8a28](https://github.com/milkyware/sarif-converter/commit/9ce8a2876bdaec6f60076ef1cc6da662db7a89cd))
+* **deps:** update dependency sarif.sdk to v5 ([#62](https://github.com/milkyware/sarif-converter/issues/62)) ([7fa9126](https://github.com/milkyware/sarif-converter/commit/7fa91269254d142899eb173c9cdf296c1679a827))
+* **deps:** update vstest monorepo to 18.6.0 ([#61](https://github.com/milkyware/sarif-converter/issues/61)) ([4906829](https://github.com/milkyware/sarif-converter/commit/49068295542e40216fe8f7f9c87e1fffdfbd8b40))
+
 ## [0.0.21](https://github.com/milkyware/sarif-converter/compare/v0.0.20...v0.0.21) (2026-05-08)
 
 
