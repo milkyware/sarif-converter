@@ -1,22 +1,26 @@
 {
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "release-type": "simple",
+  "bump-minor-pre-major": true,
+  "bump-patch-for-minor-pre-major": true,
+  "changelog-path": "CHANGELOG.md",
+  "include-v-in-tag": true,
+  "pull-request-header": "SARIF Converter: Preparing the next release!! 📢",
   "exclude-paths": [
     ".git",
     ".idea",
     ".github/renovate.json",
     ".vscode"
   ],
-  "release-type": "simple",
-  "bump-minor-pre-major": true,
-  "bump-patch-for-minor-pre-major": true,
-  "include-v-in-tag": true,
   "changelog-sections": [
-    { "type": "feat", "section": "Features" },
-    { "type": "fix", "section": "Bug fixes" },
-    { "type": "perf", "section": "Performance improvements" },
-    { "type": "docs", "section": "Documentation" },
-    { "type": "refactor", "section": "Refactors" },
-    { "type": "build", "section": "Build system" },
-    { "type": "chore", "section": "Chores" }
+    { "type": "breaking", "section": "⛓️‍💥 Breaking Changes"},
+    { "type": "feat", "section": "🚀 Enhancements" },
+    { "type": "perf", "section": "🚀 Enhancements" },
+    { "type": "fix", "section": "🩹 Fixes" },
+    { "type": "docs", "section": "📖 Docs" },
+    { "type": "refactor", "section": "🔄 Refactors" },
+    { "type": "test", "section": "🧪 Tests" },
+    { "type": "chore", "section": "🧹 Chores" }
   ],
   "packages": {
     ".": {
@@ -25,6 +29,5 @@
         "README.md"
       ]
     }
-  },
-  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+  }
 }
