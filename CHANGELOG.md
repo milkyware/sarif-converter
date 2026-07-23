@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.23](https://github.com/milkyware/sarif-converter/compare/v0.0.22...v0.0.23) (2026-07-23)
+
+
+### 🧹 Chores
+
+* swap to nuget trusted publishing ([020b949](https://github.com/milkyware/sarif-converter/commit/020b9492d1a5a5d73141785d11f7436031ec6db9))
+* updated release please sections ([bb98665](https://github.com/milkyware/sarif-converter/commit/bb9866568b65139a9e08668afb32b13922ebcbe0))
+
 ## [0.0.22](https://github.com/milkyware/sarif-converter/compare/v0.0.21...v0.0.22) (2026-07-22)
 
 
