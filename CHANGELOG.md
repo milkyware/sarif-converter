@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.24](https://github.com/milkyware/sarif-converter/compare/v0.0.23...v0.0.24) (2026-07-23)
+
+
+### 🧹 Chores
+
+* fixed release workflow permissions ([a124d48](https://github.com/milkyware/sarif-converter/commit/a124d481ac1397fcb23c88029aebae9041e47d14))
+
 ## [0.0.23](https://github.com/milkyware/sarif-converter/compare/v0.0.22...v0.0.23) (2026-07-23)
 
 
