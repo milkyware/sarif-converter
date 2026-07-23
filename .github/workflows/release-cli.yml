@@ -21,6 +21,7 @@ permissions:
   actions: read
   checks: write
   contents: write
+  id-token: write
 
 jobs:
   build:
