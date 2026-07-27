@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.0.25](https://github.com/milkyware/sarif-converter/compare/v0.0.24...v0.0.25) (2026-07-27)
+
+
+### 🧹 Chores
+
+* **deps:** update dependency nsubstitute to v6 ([#83](https://github.com/milkyware/sarif-converter/issues/83)) ([116582f](https://github.com/milkyware/sarif-converter/commit/116582f9fd72f8825f24ee124cca32ba0d3b42d4))
+* renovate tweaks ([2ff34b0](https://github.com/milkyware/sarif-converter/commit/2ff34b023a27de61c66fe3461107cb80b0f6b2c6))
+* restore renovate extends and labels ([7c8fa1e](https://github.com/milkyware/sarif-converter/commit/7c8fa1eea34de09c5ae13a8a5a3a903e3e985c95))
+* xunit v3 upgrade ([#85](https://github.com/milkyware/sarif-converter/issues/85)) ([8937872](https://github.com/milkyware/sarif-converter/commit/8937872589eb5b455e30d3f538b5f1cb496e0e7e))
+
 ## [0.0.24](https://github.com/milkyware/sarif-converter/compare/v0.0.23...v0.0.24) (2026-07-23)
 
 
