@@ -7,6 +7,6 @@ namespace MilkyWare.Sarif.Converter.Converters
     {
         public FormatType FormatType { get; }
 
-        Task<string> ConvertAsync(SarifLog sarif);
+        Task<string> ConvertAsync(SarifLog sarif, CancellationToken cancellationToken = default);
     }
 }

@@ -23,7 +23,7 @@ namespace MilkyWare.Sarif.Converter.Commands
                 return 1;
             }
 
-            var xml = await converter.ConvertAsync(sarif);
+            var xml = await converter.ConvertAsync(sarif, cancellationToken);
 
             if (string.IsNullOrEmpty(settings.OutputFile))
             {
@@ -37,7 +37,7 @@ namespace MilkyWare.Sarif.Converter.Commands
                 Directory.CreateDirectory(directory);
             }
 
-            await File.WriteAllTextAsync(settings.OutputFile, xml);
+            await File.WriteAllTextAsync(settings.OutputFile, xml, cancellationToken);
             return 0;
         }
     }
