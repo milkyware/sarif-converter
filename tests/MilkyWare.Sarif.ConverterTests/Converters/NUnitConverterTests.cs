@@ -7,12 +7,16 @@ namespace MilkyWare.Sarif.Converter.Converters.Tests
     {
         private readonly NUnitConverter _converter;
         private readonly ILogger<NUnitConverter> _logger;
+        private readonly ITestContextAccessor _testContextAccessor;
 
-        public NUnitConverterTests()
+        public NUnitConverterTests(ITestContextAccessor testContextAccessor)
         {
             _logger = Substitute.For<ILogger<NUnitConverter>>();
             _converter = new NUnitConverter(_logger);
+            _testContextAccessor = testContextAccessor;
         }
+
+        public CancellationToken CancellationToken => _testContextAccessor.Current.CancellationToken;
 
         [Fact()]
         public async Task ConvertAsyncTest()
@@ -76,12 +80,12 @@ namespace MilkyWare.Sarif.Converter.Converters.Tests
                     ]
                 }
                 """);
-            await sw.FlushAsync();
+            await sw.FlushAsync(CancellationToken);
             ms.Position = 0;
             var input = SarifLog.Load(ms);
 
             // Act
-            var actual = await _converter.ConvertAsync(input);
+            var actual = await _converter.ConvertAsync(input, CancellationToken);
 
             // Assert
             actual.Should()

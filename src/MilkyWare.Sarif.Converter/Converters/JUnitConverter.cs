@@ -13,7 +13,7 @@ namespace MilkyWare.Sarif.Converter.Converters
 
         public FormatType FormatType => FormatType.JUnit;
 
-        public async Task<string> ConvertAsync(SarifLog sarif)
+        public async Task<string> ConvertAsync(SarifLog sarif, CancellationToken cancellationToken = default)
         {
             _logger.LogInformation("Converting SARIF to JUnit");
             var testSuite = new XElement("testsuite");
@@ -49,12 +49,12 @@ namespace MilkyWare.Sarif.Converter.Converters
                 OmitXmlDeclaration = true,
                 Indent = true
             });
-            await testSuites.SaveAsync(xw, default);
+            await testSuites.SaveAsync(xw, cancellationToken);
             await xw.FlushAsync();
 
             ms.Position = 0;
             var sr = new StreamReader(ms, Encoding.UTF8);
-            var xml = await sr.ReadToEndAsync();
+            var xml = await sr.ReadToEndAsync(cancellationToken);
             return xml;
         }
     }
