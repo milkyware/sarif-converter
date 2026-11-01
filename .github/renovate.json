@@ -13,11 +13,7 @@
     "{{updateType}}"
   ],
   "automergeStrategy": "squash",
-  "internalChecksFilter": "strict",
   "minimumReleaseAge": "14 days",
-  "prCreation": "not-pending",
-  "semanticCommits": "enabled",
-  "separateMajorMinor": true,
   "vulnerabilityAlerts": {
     "addLabels": ["security"]
   },
