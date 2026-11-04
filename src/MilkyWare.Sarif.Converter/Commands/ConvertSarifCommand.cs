@@ -12,7 +12,7 @@ namespace MilkyWare.Sarif.Converter.Commands
         private readonly IEnumerable<ISarifConverter> _converters = converters;
         private readonly ILogger<ConvertSarifCommand> _logger = logger;
 
-        protected override async Task<int> ExecuteAsync(CommandContext context, ConvertSarifSettings settings, CancellationToken cancellationToken)
+        public override async Task<int> ExecuteAsync(CommandContext context, ConvertSarifSettings settings, CancellationToken cancellationToken)
         {
             var sarif = SarifLog.Load(settings.InputFile);
 
