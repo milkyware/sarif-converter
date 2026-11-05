@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.0.27](https://github.com/milkyware/sarif-converter/compare/v0.0.26...v0.0.27) (2026-11-05)
+
+
+### 🏗️ Build & Automation
+
+* fixed `release-cli` test step ([#106](https://github.com/milkyware/sarif-converter/issues/106)) ([d60e210](https://github.com/milkyware/sarif-converter/commit/d60e210b106fc804d6019b57f3c61fc04503e506))
+
+
+### 🧹 Maintenance
+
+* added pr template ([12e9d9f](https://github.com/milkyware/sarif-converter/commit/12e9d9f2a0b08d94bfc03576e70235a767cdf8a5))
+* updated release-please sections ([8f9dc60](https://github.com/milkyware/sarif-converter/commit/8f9dc60c78f1cfb3b61a18391b3ef061751474c2))
+
 ## [0.0.26](https://github.com/milkyware/sarif-converter/compare/v0.0.25...v0.0.26) (2026-11-05)
 
 
