@@ -13,14 +13,17 @@
     ".vscode"
   ],
   "changelog-sections": [
-    { "type": "breaking", "section": "⛓️‍💥 Breaking Changes"},
+    { "type": "breaking", "section": "⛓️‍💥 Breaking Changes" },
     { "type": "feat", "section": "🚀 Enhancements" },
     { "type": "perf", "section": "🚀 Enhancements" },
     { "type": "fix", "section": "🩹 Fixes" },
-    { "type": "docs", "section": "📖 Docs" },
-    { "type": "refactor", "section": "🔄 Refactors" },
-    { "type": "test", "section": "🧪 Tests" },
-    { "type": "chore", "section": "🧹 Chores" }
+    { "type": "docs", "section": "📖 Documentation" },
+    { "type": "refactor", "section": "♻️ Refactoring" },
+    { "type": "test", "section": "✅ Tests" },
+    { "type": "build", "section": "🏗️ Build & Automation" },
+    { "type": "ci", "section": "🏗️ Build & Automation" },
+    { "type": "chore", "section": "🧹 Maintenance" },
+    { "type": "revert", "section": "⏪ Reverts" }
   ],
   "packages": {
     ".": {
