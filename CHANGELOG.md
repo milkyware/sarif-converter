@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.0.26](https://github.com/milkyware/sarif-converter/compare/v0.0.25...v0.0.26) (2026-11-05)
+
+
+### 🧹 Chores
+
+* cleanup renovate config ([8a56d81](https://github.com/milkyware/sarif-converter/commit/8a56d815dfaf93a26c371c7dae2fea29cc822f52))
+* **deps:** pin dependencies ([#93](https://github.com/milkyware/sarif-converter/issues/93)) ([21115b7](https://github.com/milkyware/sarif-converter/commit/21115b75530aa8cecddc9e6b3919fa66f090cbdf))
+* **deps:** update actions/checkout action to v7.0.1 ([#87](https://github.com/milkyware/sarif-converter/issues/87)) ([4bf6fa8](https://github.com/milkyware/sarif-converter/commit/4bf6fa8e77847177b085f1e23bdd9ab1ce0bbc09))
+* **deps:** update actions/download-artifact action to v8.0.2 ([#88](https://github.com/milkyware/sarif-converter/issues/88)) ([81b5020](https://github.com/milkyware/sarif-converter/commit/81b50206e1784494277b34e8fa8342e3e7ca3072))
+* **deps:** update actions/setup-dotnet action to v5.4.0 ([#95](https://github.com/milkyware/sarif-converter/issues/95)) ([ae0953b](https://github.com/milkyware/sarif-converter/commit/ae0953bd72508016a260caa146577bbc8ad24bab))
+* **deps:** update actions/setup-dotnet action to v6 ([#102](https://github.com/milkyware/sarif-converter/issues/102)) ([3ac9ee2](https://github.com/milkyware/sarif-converter/commit/3ac9ee2edd2404d2b3fe9b927a315cc1c4bfa528))
+* **deps:** update actions/upload-artifact action to v7.0.2 ([#94](https://github.com/milkyware/sarif-converter/issues/94)) ([b0feca6](https://github.com/milkyware/sarif-converter/commit/b0feca68820f7b8c1a202af2adb5d6a0f474df2e))
+* **deps:** update amannn/action-semantic-pull-request action to v6.1.1 ([#96](https://github.com/milkyware/sarif-converter/issues/96)) ([7f43686](https://github.com/milkyware/sarif-converter/commit/7f43686c9e20faee3cd80048cdcded2c3f734575))
+* **deps:** update dependency coverlet.collector to 10.1.0 ([#89](https://github.com/milkyware/sarif-converter/issues/89)) ([16ed90a](https://github.com/milkyware/sarif-converter/commit/16ed90a9785a68ef400da28b0d73d2634e7e8631))
+* **deps:** update dependency fluentassertions to 8.11.0 ([#90](https://github.com/milkyware/sarif-converter/issues/90)) ([77fb188](https://github.com/milkyware/sarif-converter/commit/77fb1886d8a04620d63120a04e8c5cb41fd01d35))
+* **deps:** update dependency microsoft.net.test.sdk to 18.11.0 ([#91](https://github.com/milkyware/sarif-converter/issues/91)) ([1f07356](https://github.com/milkyware/sarif-converter/commit/1f073568cd7d0babd44393c4181ee75e9068bdd2))
+* **deps:** update dependency nsubstitute to 6.2.0 ([#92](https://github.com/milkyware/sarif-converter/issues/92)) ([23a65a4](https://github.com/milkyware/sarif-converter/commit/23a65a46c7c886c62b33a032d86a4f67032bd7df))
+* **deps:** update dependency sarif.sdk to 5.8.0 ([#97](https://github.com/milkyware/sarif-converter/issues/97)) ([7d78d6a](https://github.com/milkyware/sarif-converter/commit/7d78d6ac7fb940e6598da72133b566872ba21568))
+* **deps:** update dorny/test-reporter action to v3.2.0 ([#98](https://github.com/milkyware/sarif-converter/issues/98)) ([7952d9a](https://github.com/milkyware/sarif-converter/commit/7952d9a7fbe3e08c8956fed42d02168ecad327a0))
+* **deps:** update nuget/login action to v1.2.0 ([#99](https://github.com/milkyware/sarif-converter/issues/99)) ([d25e96d](https://github.com/milkyware/sarif-converter/commit/d25e96d93dcb5610727b12d1497f65bfdbc1c65c))
+* **deps:** update spectre-console-cli monorepo to 0.57.2 ([#100](https://github.com/milkyware/sarif-converter/issues/100)) ([70ef661](https://github.com/milkyware/sarif-converter/commit/70ef66116eb720a5c098e3af95e3b110379afb6c))
+* **deps:** update stefanzweifel/git-auto-commit-action action to v7.2.0 ([#101](https://github.com/milkyware/sarif-converter/issues/101)) ([4467136](https://github.com/milkyware/sarif-converter/commit/4467136f5906391bd17dc04ae433020dd3a3394d))
+* **deps:** update stefanzweifel/git-auto-commit-action action to v7.2.1 ([#104](https://github.com/milkyware/sarif-converter/issues/104)) ([92e49c7](https://github.com/milkyware/sarif-converter/commit/92e49c7616a66e66f5ccf53726db7d020b2351f2))
+* **deps:** update xunit-dotnet monorepo to v4 ([#103](https://github.com/milkyware/sarif-converter/issues/103)) ([c22ab26](https://github.com/milkyware/sarif-converter/commit/c22ab26f248387ede34acc713c81cbabec416984))
+* enable automerge for minor updates ([e2f7719](https://github.com/milkyware/sarif-converter/commit/e2f7719d7eab9bd5ad98940098347c2c653bce4d))
+* updated renovate ([b34f2c0](https://github.com/milkyware/sarif-converter/commit/b34f2c00a8726129b6d84654a683d8111a0c5bb8))
+
 ## [0.0.25](https://github.com/milkyware/sarif-converter/compare/v0.0.24...v0.0.25) (2026-07-27)
 
 
