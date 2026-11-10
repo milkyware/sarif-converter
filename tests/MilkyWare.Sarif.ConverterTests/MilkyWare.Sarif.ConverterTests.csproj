@@ -14,7 +14,7 @@
     <PackageReference Include="AutoBogus" Version="2.13.1" />
     <PackageReference Include="coverlet.MTP" Version="10.1.0" />
     <PackageReference Include="FluentAssertions" Version="8.11.0" />
-    <PackageReference Include="Microsoft.Testing.Extensions.TrxReport" Version="2.5.1" />
+    <PackageReference Include="Microsoft.Testing.Extensions.TrxReport" Version="2.5.2" />
     <PackageReference Include="Microsoft.Testing.Platform" Version="2.5.2" />
     <PackageReference Include="NSubstitute" Version="6.2.0" />
     <PackageReference Include="Spectre.Console.Cli.Testing" Version="0.57.2" />
