@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.28](https://github.com/milkyware/sarif-converter/compare/v0.0.27...v0.0.28) (2026-11-20)
+
+
+### 🧹 Maintenance
+
+* **deps:** update actions/setup-dotnet action to v6.1.0 ([#109](https://github.com/milkyware/sarif-converter/issues/109)) ([1b5726f](https://github.com/milkyware/sarif-converter/commit/1b5726f31189782d20447b3b564323b0662b8a8b))
+* **deps:** update amannn/action-semantic-pull-request action to v6.1.2 ([#110](https://github.com/milkyware/sarif-converter/issues/110)) ([66093b2](https://github.com/milkyware/sarif-converter/commit/66093b2216bfbd5e21367dff0bbb51358806802a))
+* **deps:** update dependency microsoft.testing.extensions.trxreport to 2.5.2 ([#107](https://github.com/milkyware/sarif-converter/issues/107)) ([7936717](https://github.com/milkyware/sarif-converter/commit/7936717d39419f533a6c1f551c6fe080130f9d46))
+
 ## [0.0.27](https://github.com/milkyware/sarif-converter/compare/v0.0.26...v0.0.27) (2026-11-05)
 
 
